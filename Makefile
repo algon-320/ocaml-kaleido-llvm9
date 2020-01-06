@@ -1,5 +1,5 @@
 toy.byte: *.ml _tags
-	ocamlbuild toy.byte
+	ocamlbuild -use-ocamlfind toy.byte
 
 .PHONY: run
 run: toy.byte
