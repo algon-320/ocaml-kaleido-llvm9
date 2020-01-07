@@ -13,7 +13,7 @@ debug:
 
 .PHONY: run
 run: toy.native
-	LD_LIBRARY_PATH=_build ./toy.native
+	cat prelude.txt mandelbrot.txt - | LD_LIBRARY_PATH=_build ./toy.native
 
 .PHONY: clean
 clean:

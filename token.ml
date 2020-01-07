@@ -18,3 +18,5 @@ type token =
   | If | Then | Else
   | For | In
 
+  (* operators *)
+  | Binary | Unary
