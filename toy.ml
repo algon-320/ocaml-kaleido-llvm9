@@ -12,6 +12,7 @@ let main () =
 
   (* Install standard binary operators.
    * 1 is the lowest precedence. *)
+  Hashtbl.add Parser.binop_precedence '=' 2;
   Hashtbl.add Parser.binop_precedence '<' 10;
   Hashtbl.add Parser.binop_precedence '+' 20;
   Hashtbl.add Parser.binop_precedence '-' 20;
@@ -29,6 +30,9 @@ let main () =
   (*
     DataLayout.add (ExecutionEngine.target_data the_execution_engine) the_fpm;
    *)
+
+  (* Promote allocas to registers. *)
+  add_memory_to_register_promotion the_fpm;
 
   (* Do simple "peephole" optimizations and bit-twiddling optzn. *)
   add_instruction_combination the_fpm;

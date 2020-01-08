@@ -1,5 +1,5 @@
 # Low-precedence operator that ignores operands
-def binary: 1 (x y) 0; 
+def binary: 1 (x y) y;
 
 # Logical unary not.
 def unary!(v)
@@ -33,8 +33,8 @@ def binary& 6 (LHS RHS)
     !!RHS;
 
 # Define = with slightly lower precedence than relationals.
-def binary = 9 (LHS RHS)
-  !(LHS < RHS | LHS > RHS);
+# def binary = 9 (LHS RHS)
+#   !(LHS < RHS | LHS > RHS);
 
 
 # Load c library
